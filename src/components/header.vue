@@ -1,13 +1,15 @@
 <template>
   <div class="el-header" style="height: 60px;">
-    <div class="main">
-      <h3>
-        <a href="#/" class="router-link-active">
-          <!-- <img src="../assets/logo.png" class="logo" /> -->
-          demo管理
-        </a>
-      </h3>
-    </div>
+    <el-header>
+      <div class="main">
+        <h3>
+          <a href="#/" class="router-link-active">
+            <!-- <img src="../assets/logo.png" class="logo" /> -->
+            demo管理
+          </a>
+        </h3>
+      </div>
+    </el-header>
   </div>
 </template>
 

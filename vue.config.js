@@ -17,13 +17,21 @@ module.exports={
     //配置跨域
     devServer:{
         proxy:{
-            '/api':{
+            '/node':{
                 target:'http://192.144.235.248',
                 secure:true,
                 changeOroigin:true,
                 // pathRewrite: {
                 //     '^/api': ''
                 // }
+            },
+            '/php':{
+                target:'http://localhost:8000/fetch-upload/controller/',
+                secure:true,
+                changeOroigin:true,
+                pathRewrite: {
+                    '^/php': ''
+                },
             }
         }
     }

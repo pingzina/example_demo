@@ -7,24 +7,27 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'index',
-      component: ()=>import("@/views/index/index.vue"),
-      children:[{
-        path:'',
-        name:'',
-        component:()=>import("/views//index.vue")
-      }]
+      component: () => import("@/views/index/index.vue"),
+      redirect:"/elupload",
+      children: [{
+          path: '/clipboard',
+          name: 'clipboard',
+          component: () => import("./views/vue-clipboard2/index.vue")
+        },
+        {
+          path: '/elupload',
+          name: 'elupload',
+          component: () => import("./views/el-upload/upload.vue")
+        },
+        {
+          path: '/photo',
+          name: 'photo',
+          component: () => import("./views/vue-photo-preview/index.vue")
+        },
+      ]
     },
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (about.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    // }
   ]
 })
